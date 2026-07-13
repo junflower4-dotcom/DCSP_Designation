@@ -1,10 +1,10 @@
 /*----------------------------------------------------------------\
-@ DCSP
+@ HGU_MCU_DCSP
 
-Title            : gimbal_6_DesignationLoop
+Title            : gimbal_DesignationLoop
 Author           : Yejun_Lee
 Created          : 06-06-2026
-Modified         : 06-06-2026
+Modified         : 07-13-2026
 
 ----------------------------------------------------------------*/
 
