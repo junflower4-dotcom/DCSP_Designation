@@ -1,10 +1,10 @@
 /*----------------------------------------------------------------\
-@ DCSP
+@ HGU_MCE_DCSP
 
 Title            : mygimbal_runexp.c
 Author           : Yejun_Lee
 Created          : 17-05-2026
-Modified         : 26-05-2026
+Modified         : 13-07-2026
 
 Description      : Common experiment runner
 ----------------------------------------------------------------*/

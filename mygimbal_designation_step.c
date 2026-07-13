@@ -1,6 +1,6 @@
 
 /*----------------------------------------------------------------\
-@ HGU_MCU_DCSP
+@ HGU_MCE_DCSP
 
 Title			 : mygimbal_designation_step.c
 Author           : Yejun_Lee
