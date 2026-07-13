@@ -5,7 +5,7 @@
 Title			 : mygimbal_designation_step.h
 Author           : Yejun_Lee
 Created          : 06-06-2026
-Modified         : 07-13-2026
+Modified         : 13-07-2026
 
 Description		 : step input
 ----------------------------------------------------------------*/
