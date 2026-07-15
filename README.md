@@ -5,9 +5,11 @@ NI-DAQmx와 C를 이용한 짐벌 위치 제어 실험 코드입니다.
 
 ## 🎬 실험 구동 영상
 아래 이미지를 클릭하면 짐벌 제어 실험 구동 영상(YouTube Shorts)으로 이동합니다.
-
+- Designation 5deg
 [![Gimbal Control Experiment](https://img.youtube.com/vi/k8pQFL60OwI/maxresdefault.jpg)](https://youtube.com/shorts/k8pQFL60OwI)
 
+- Designation 20deg
+[![Gimbal Control Experiment](https://img.youtube.com/vi/wrr52FHKExw/0.jpg)](https://youtube.com/shorts/wrr52FHKExw)
 ---
 
 ## 파일 구성
