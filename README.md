@@ -10,6 +10,7 @@ NI-DAQmx와 C를 이용한 짐벌 위치 제어 실험 코드입니다.
 
 - Designation 20deg
 [![Gimbal Control Experiment](https://img.youtube.com/vi/wrr52FHKExw/0.jpg)](https://youtube.com/shorts/wrr52FHKExw)
+
 ---
 
 ## 파일 구성
