@@ -1,70 +1,64 @@
 # Gimbal Designation Loop
 
-NI-DAQmx와 C를 이용한 짐벌 위치 제어 실험 코드입니다.  
-자이로 센서와 포텐쇼미터 신호를 읽고, PD 제어기와 저역통과필터를 적용하여 모터 명령을 출력하고 실험 데이터를 저장합니다.
+This repository contains C-based control code for a gimbal position control experiment utilizing NI-DAQmx.  
+The program reads signals from a gyroscope and a potentiometer, applies a PD controller along with a Low-Pass Filter (LPF), outputs motor commands, and logs experimental data.
 
-## 🎬 실험 구동 영상
-아래 이미지를 클릭하면 짐벌 제어 실험 구동 영상(YouTube Shorts)으로 이동합니다.
-### 실험 영상 확인
-| 5도 테스트 | 20도 테스트 |
+## 🎬 Experimental Videos
+Click the images below to watch the gimbal control experiment demonstrations on YouTube Shorts.
+
+### Demo Videos
+| 5-degree Test | 20-degree Test |
 | :---: | :---: |
 | <a href="https://youtube.com/shorts/k8pQFL60OwI"><img src="https://img.youtube.com/vi/k8pQFL60OwI/maxresdefault.jpg" width="300"></a> | <a href="https://youtube.com/shorts/wrr52FHKExw"><img src="https://img.youtube.com/vi/wrr52FHKExw/0.jpg" width="300"></a> |
-| Designation 5deg | Designation 20deg |
+| Designation 5 deg | Designation 20 deg |
 
 ---
 
-## 파일 구성
+## File Structure
 
-| 파일 | 역할 |
+| File | Role / Function |
 |---|---|
-| `main.c` | 프로그램 실행 순서와 메인 루프 |
-| `mygimbal_runexp.c` | DAQ 입출력, 센서 변환, PD 제어, LPF, 데이터 저장 |
-| `mygimbal_runexp.h` | 실험 상수와 함수 선언 |
-| `mygimbal_designation_step.c` | Step 실험 명령과 실험 정보 반환 |
-| `mygimbal_designation_step.h` | 샘플링 주파수, 실험 시간, 출력 파일명 정의 |
+| `main.c` | Main loop and execution sequence of the program |
+| `mygimbal_runexp.c` | DAQ I/O, sensor conversion, PD control, LPF, and data logging |
+| `mygimbal_runexp.h` | Experimental constants and function declarations |
+| `mygimbal_designation_step.c` | Step experiment command logic and experimental info return |
+| `mygimbal_designation_step.h` | Definitions for sampling frequency, trial duration, and output filename |
 
-## 주요 설정
+## Key Specifications & Settings
 
-- Sampling frequency: 200 Hz
-- Target angle: 20 deg
-- Controller: PD controller
-- Gyro LPF cutoff frequency: 10 Hz
-- Emergency stop key: `f`
+- **Sampling Frequency:** 200 Hz
+- **Target Angle:** 20 deg
+- **Controller Type:** PD Controller
+- **Gyro LPF Cutoff Frequency:** 10 Hz
+- **Emergency Stop Key:** `f`
 
-## DAQ 채널
+## DAQ Channel Configuration
 
 - `Dev4/ai2`: Gyro voltage
 - `Dev4/ai3`: Potentiometer voltage
 - `Dev4/ao0`: Switch command
 - `Dev4/ao1`: Motor command
 
-## 실행 환경
+## System Requirements & Environment
 
-이 프로젝트는 다음 환경을 전제로 합니다.
+This project is configured and tested under the following environment:
 
-- Windows
-- Visual Studio C project
-- NI-DAQmx driver and C development support
-- `NIDAQmx.h`를 찾을 수 있도록 설정된 include/library 경로
-- NI DAQ 장치 이름이 `Dev4`로 설정된 환경
+- **OS:** Windows
+- **IDE:** Visual Studio (C Project)
+- **Driver:** NI-DAQmx driver with C development support
+- **Paths:** Include and Library paths configured to locate `NIDAQmx.h`
+- **Device Name:** NI DAQ device named as `Dev4` in NI MAX (Measurement & Automation Explorer)
 
-## 실행 전 주의사항
+## Pre-execution Checklists
 
-1. 실제 DAQ 채널과 코드의 `Dev4` 채널 설정이 일치하는지 확인합니다.
-2. 짐벌을 정지한 상태에서 자이로 오프셋 계산을 수행합니다.
-3. 비상 정지는 키보드의 `f` 키를 사용합니다.
-4. 장비가 연결되지 않은 일반 컴퓨터에서는 그대로 실행되지 않습니다.
+1. Ensure the physical DAQ channel connections match the configuration in the code (`Dev4`).
+2. Perform the gyro offset calibration while the gimbal is **completely static (still)**.
+3. Use the `f` key on the keyboard as the emergency stop.
+4. Note that this program **will not execute** on standard PCs without physical NI DAQ hardware connected.
 
-## 출력 데이터
+## Experimental Output Data
 
-실험 결과는 기본적으로 다음 파일에 저장됩니다.
+The experimental results are saved by default to the following file:
 
 ```text
 Step_DesignationLoop.txt
-```
-
-저장 열:
-
-```text
-time Vcmd Vc omega_h omega_h_filter Vpoten psi_h
-```
