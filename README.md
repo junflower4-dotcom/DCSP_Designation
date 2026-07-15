@@ -3,6 +3,13 @@
 NI-DAQmx와 C를 이용한 짐벌 위치 제어 실험 코드입니다.  
 자이로 센서와 포텐쇼미터 신호를 읽고, PD 제어기와 저역통과필터를 적용하여 모터 명령을 출력하고 실험 데이터를 저장합니다.
 
+## 🎬 실험 구동 영상
+아래 이미지를 클릭하면 짐벌 제어 실험 구동 영상(YouTube Shorts)으로 이동합니다.
+
+[![Gimbal Control Experiment](https://img.youtube.com/vi/k8pQFL60OwI/maxresdefault.jpg)](https://youtube.com/shorts/k8pQFL60OwI)
+
+---
+
 ## 파일 구성
 
 | 파일 | 역할 |
